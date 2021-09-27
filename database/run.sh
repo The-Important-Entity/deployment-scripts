@@ -15,7 +15,4 @@ sudo docker run -d --name pg \
 postgres
 
 sudo docker cp ./init.sql pg:/docker-entrypoint-initdb.d/init.sql
-sudo docker cp ./testorg.sql pg:/docker-entrypoint-initdb.d/testorg.sql
-
-sudo docker exec -u postgres pg psql postgres postgres -f docker-entrypoint-initdb.d/init.sql
-sudo docker exec -u postgres pg psql postgres postgres -f docker-entrypoint-initdb.d/testorg.sql
+#sudo docker cp ./testorg.sql pg:/docker-entrypoint-initdb.d/testorg.sql
