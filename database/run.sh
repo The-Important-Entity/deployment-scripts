@@ -1,4 +1,5 @@
 #!/bin/bash
+# deploy postgres in a docker container
 
 if [ -z $1 ] || [ -z $2 ] || [ -z $3 ]
 then
@@ -15,4 +16,4 @@ sudo docker run -d --name pg \
 postgres
 
 sudo docker cp ./init.sql pg:/docker-entrypoint-initdb.d/init.sql
-#sudo docker cp ./testorg.sql pg:/docker-entrypoint-initdb.d/testorg.sql
+sudo docker cp ./testorg.sql pg:/docker-entrypoint-initdb.d/testorg.sql
