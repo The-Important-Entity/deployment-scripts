@@ -20,3 +20,7 @@ cd authentication-service
 ./build.sh
 ./run.sh 0 http://192.168.200.2:6000 5000
 cd ..
+
+cd backend-landing
+./build.sh
+./run.sh 0 http://192.168.200.2:6000 http://192.168.200.2:5000 2000
