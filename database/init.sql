@@ -6,7 +6,9 @@ CREATE SCHEMA organization;
 
 CREATE TABLE organization.organization (
 	id serial PRIMARY KEY NOT NULL,
-	name VARCHAR(50) NOT NULL UNIQUE
+	name VARCHAR(50) NOT NULL UNIQUE,
+  email VARCHAR(100) NOT NULL UNIQUE,
+  password VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE organization.security_groups (
@@ -33,7 +35,7 @@ CREATE TABLE organization.access_keys (
   id serial PRIMARY KEY NOT NULL,
   group_id INT NOT NULL,
   app_id VARCHAR(150) NOT NULL UNIQUE,
-  secret VARCHAR(150) NOT NULL UNIQUE,
+  secret VARCHAR(150) NOT NULL,
   CONSTRAINT fk_group_id
     FOREIGN KEY(group_id)
     REFERENCES organization.security_groups(id)

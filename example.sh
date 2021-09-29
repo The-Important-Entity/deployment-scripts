@@ -11,7 +11,12 @@ cd database
 ./run.sh jds81799 5432 /home/jscalera/data/pg
 cd ..
 
+cd database-service
+./build.sh
+./run.sh 0 192.168.200.2 5432 organization_readonly jds81799 account_data 6000
+cd ..
+
 cd authentication-service
 ./build.sh
-./run.sh 0 192.168.200.2 5432 organization_readonly jds81799 account_data 5000
+./run.sh 0 http://192.168.200.2:6000 5000
 cd ..
