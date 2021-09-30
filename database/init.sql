@@ -11,6 +11,16 @@ CREATE TABLE organization.organization (
   password VARCHAR(100) NOT NULL
 );
 
+CREATE TABLE organization.namespaces (
+  id serial PRIMARY KEY NOT NULL,
+  org_id INT NOT NULL,
+  name VARCHAR(150) NOT NULL UNIQUE,
+  CONSTRAINT fk_org_id
+    FOREIGN KEY(org_id)
+    REFERENCES organization.organization(id) ON DELETE CASCADE
+);
+
+
 CREATE TABLE organization.security_groups (
   id serial PRIMARY KEY NOT NULL,
   org_id INT NOT NULL,
@@ -28,7 +38,10 @@ CREATE TABLE organization.security_perms (
   write_perm INT NOT NULL,
   CONSTRAINT fk_group_id
     FOREIGN KEY(group_id)
-    REFERENCES organization.security_groups(id)
+    REFERENCES organization.security_groups(id),
+  CONSTRAINT fk_namespace
+    FOREIGN KEY(namespace)
+    REFERENCES organization.namespaces(name) ON DELETE CASCADE
 );
 
 CREATE TABLE organization.access_keys (
@@ -39,15 +52,6 @@ CREATE TABLE organization.access_keys (
   CONSTRAINT fk_group_id
     FOREIGN KEY(group_id)
     REFERENCES organization.security_groups(id)
-);
-
-CREATE TABLE organization.namespaces (
-  id serial PRIMARY KEY NOT NULL,
-  org_id INT NOT NULL,
-  name VARCHAR(150) NOT NULL UNIQUE,
-  CONSTRAINT fk_org_id
-    FOREIGN KEY(org_id)
-    REFERENCES organization.organization(id) ON DELETE CASCADE
 );
 
 CREATE ROLE organization_readonly LOGIN PASSWORD 'jds81799';
