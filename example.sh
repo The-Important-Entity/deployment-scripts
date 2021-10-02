@@ -13,7 +13,7 @@ cd ..
 
 cd database-service
 ./build.sh
-./run.sh 0 192.168.200.2 5432 organization_readonly jds81799 account_data 6000
+./run.sh 0 192.168.200.2 5432 postgres jds81799 account_data 6000
 cd ..
 
 cd authentication-service

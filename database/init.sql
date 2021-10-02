@@ -33,7 +33,7 @@ CREATE TABLE organization.security_groups (
 CREATE TABLE organization.security_perms (
   id serial PRIMARY KEY NOT NULL,
   group_id INT NOT NULL,
-  namespace VARCHAR(150) NOT NULL,
+  namespace VARCHAR(150) NOT NULL UNIQUE,
   read_perm INT NOT NULL,
   write_perm INT NOT NULL,
   CONSTRAINT fk_group_id
