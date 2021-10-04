@@ -13,14 +13,14 @@ cd ..
 
 cd database-service
 ./build.sh
-./run.sh 0 192.168.200.2 5432 postgres jds81799 account_data 6000
+./run.sh 0 192.168.1.15 5432 postgres jds81799 account_data 6000
 cd ..
 
 cd authentication-service
 ./build.sh
-./run.sh 0 http://192.168.200.2:6000 5000
+./run.sh 0 http://192.168.1.15:6000 5000
 cd ..
 
-cd backend-landing
-./build.sh
-./run.sh 0 http://192.168.200.2:6000 http://192.168.200.2:5000 2000
+# cd backend-landing
+# ./build.sh
+# ./run.sh 0 http://192.168.1.15:6000 http://192.168.1.15:5000 2000

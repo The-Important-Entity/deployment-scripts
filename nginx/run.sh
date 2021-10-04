@@ -18,4 +18,4 @@ sudo docker run -d --restart=always --name nginx-temp \
 #     certonly --webroot --agree-tos --renew-by-default \
 #     --preferred-challenges http-01 --server https://acme-v02.api.letsencrypt.org/directory \
 #     --text --email joseph.scalera1@gmail.com \
-#     -w /tmp/letsencrypt -d josephscalera.com -d storage.josephscalera.com
+#     -w /tmp/letsencrypt -d josephscalera.com -d storage.josephscalera.com -d mail.josephscalera.com

@@ -16,6 +16,6 @@ sudo docker run -d --name obj-$1 --restart=always -p 400$1:4000 -p 300$1:3000 \
 -e OBJ_PORT=4000 \
 -e HOST=192.168.200.2 \
 -e DHT_ID=$2 \
--e AUTH=http://192.168.200.2:5000 \
--e DB_SERVICE=http://192.168.200.2:6000 \
+-e AUTH=http://192.168.1.15:5000 \
+-e DB_SERVICE=http://192.168.1.15:6000 \
 obj-node

@@ -1,9 +1,12 @@
 #!/bin/bash
 
-if [ -z $1 ]
-then
-      echo "Error: missing command line args"
-      exit 1
-fi
+git clone git@github.com:The-Important-Entity/frontend-landing.git
+cd frontend-landing
+npm install
+npm run build
+mv build/ ../public
+cd ..
+sudo rm -r frontend-landing
 
 sudo docker build -t nginx .
+#sudo rm -r public
