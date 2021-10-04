@@ -2,13 +2,13 @@
 
 cd object-storage
 ./build.sh
-./run.sh 0 25 /home/jscalera/data
-./run.sh 1 50 /home/jscalera/data
-./run.sh 2 75 /home/jscalera/data
+./run.sh 0 25 /mnt/dcimages/data
+./run.sh 1 50 /mnt/dcimages/data
+./run.sh 2 75 /mnt/dcimages/data
 cd ..
 
 cd database
-./run.sh jds81799 5432 /home/jscalera/data/pg
+./run.sh jds81799 5432 /mnt/dcimages/data/pg
 cd ..
 
 cd database-service
