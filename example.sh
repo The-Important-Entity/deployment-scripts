@@ -21,6 +21,6 @@ cd authentication-service
 ./run.sh 0 http://192.168.1.15:6000 5000
 cd ..
 
-# cd backend-landing
-# ./build.sh
-# ./run.sh 0 http://192.168.1.15:6000 http://192.168.1.15:5000 2000
+cd backend-landing
+./build.sh
+./run.sh 0 http://192.168.1.15:6000 http://192.168.1.15:5000 2000
